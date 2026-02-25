@@ -1,0 +1,71 @@
+@prefix rr:     <http://www.w3.org/ns/r2rml#> .
+@prefix rml:    <http://semweb.mmlab.be/ns/rml#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ql:     <http://semweb.mmlab.be/ns/ql#> .
+@prefix map:    <http://mapping.example.com/> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+@prefix gtfs:   <http://vocab.gtfs.org/terms#> .
+@prefix schema: <http://schema.org/> .
+
+map:map_agency_000
+
+    rml:logicalSource map:source_000 ;
+    rr:subjectMap [
+
+        rr:template "http://transport.linkeddata.es/madrid/agency/{agency_id}"
+    ] ;
+    rr:predicateObjectMap [
+
+        rr:predicate rdf:type ;
+        rr:object gtfs:Agency
+    ], [
+
+        rr:predicate foaf:page ;
+        rr:objectMap [
+
+            rml:reference "agency_url" ;
+            rr:termType rr:IRI
+        ]
+    ], [
+
+        rr:predicate foaf:name ;
+        rr:objectMap [
+
+            rml:reference "agency_name" ;
+        ]
+    ] .
+
+map:map_routes_000
+
+    rml:logicalSource map:source_001 ;
+    rr:subjectMap [
+
+        rr:template "http://transport.linkeddata.es/madrid/metro/routes/{route_id}"
+    ] ;
+    rr:predicateObjectMap [
+
+        rr:predicate rdf:type ;
+        rr:object gtfs:Route
+    ], [
+
+        rr:predicate gtfs:agency ;
+        rr:objectMap [
+
+            rr:parentTriplesMap map:map_agency_000 ;
+            rr:joinCondition [
+                rr:child "agency_id" ;
+                rr:parent "agency_id"
+            ]
+        ]
+    ] .
+
+map:source_000
+
+    rml:source "AGENCY.csv" ;
+    rml:referenceFormulation ql:CSV .
+
+map:source_001
+
+    rml:source "ROUTES.csv" ;
+    rml:referenceFormulation ql:CSV .

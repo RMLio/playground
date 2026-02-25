@@ -1,0 +1,45 @@
+@prefix rml: <http://w3id.org/rml/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ex:  <http://example.org/> .
+@prefix :  <http://example.org/> .
+
+:AuthorTM a rml:TriplesMap ; 
+    rml:logicalSource [ a rml:LogicalSource ;
+        rml:source [ a rml:RelativePathSource , rml:Source ;
+            rml:path  "author.csv"  ] ;
+        rml:referenceFormulation rml:CSV ;
+    ];
+    rml:subjectMap [ rml:template "http://example.com/person{ID}" ; ] ;
+    rml:predicateObjectMap [
+        rml:predicate ex:name ;
+        rml:objectMap [
+            rml:reference "ID" ; rml:termType rml:BlankNode ;
+            rml:gather ( 
+                [ rml:reference "TITLE" ]  [ rml:reference "FNAME" ]  [ rml:reference "LNAME" ] 
+            ) ;
+            rml:gatherAs rdf:Bag ;
+        ] ;
+    ] ;
+.
+
+:BookTM a rml:TriplesMap ;
+    rml:logicalSource [ a rml:LogicalSource ;
+        rml:source [ a rml:RelativePathSource , rml:Source ;
+            rml:path  "book.csv"  ] ;
+        rml:referenceFormulation rml:CSV ;
+    ];
+    rml:subjectMap [ rml:template "http://example.com/book{ID}" ; ] ;
+    rml:predicateObjectMap [
+        rml:predicate ex:writtenBy ;
+        rml:objectMap [
+            rml:reference "ID" ; rml:termType rml:BlankNode ;
+            rml:gather ( 
+                [ 
+                    rml:parentTriplesMap :AuthorTM;
+                    rml:joinCondition [ rml:child "ID" ; rml:parent "BOOKID" ; ] ;
+                ] 
+            ) ;
+            rml:gatherAs rdf:List;
+        ] ;
+    ] ;
+.

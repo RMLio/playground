@@ -1,0 +1,14 @@
+{
+    "id": "RMLIO-08",
+  "label": "ERA - RINF mapping",
+  "comment": "RMLIO translation of ERA RINF mapping",
+  "icon": "",
+  "mapping": "mapping.ttl",
+  "data": [
+    {
+      "path": "rinf_test.xml",
+      "type": "xml",
+      "value": ""
+    }
+  ]
+}

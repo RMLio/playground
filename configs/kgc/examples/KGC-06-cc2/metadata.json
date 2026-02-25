@@ -1,0 +1,14 @@
+{
+    "id": "KGC-06-cc2",
+    "label": "Gather in subject map",
+    "comment": "KGC-CC2",
+    "icon": "target",
+    "mapping": "mapping.ttl",
+    "data": [
+        {
+            "path": "data.json",
+            "type": "json",
+            "value": ""
+        }
+    ]
+}

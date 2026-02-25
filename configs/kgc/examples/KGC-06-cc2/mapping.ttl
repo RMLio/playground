@@ -1,0 +1,26 @@
+@prefix rml: <http://w3id.org/rml/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@base <http://example.com/rmlmapping/> .
+
+<#TM> a rml:TriplesMap;  
+  rml:logicalSource [
+    rml:source [ 
+        a rml:RelativePathSource;
+        rml:root rml:MappingDirectory;
+        rml:path "data.json"
+    ] ;
+    rml:referenceFormulation rml:JSONPath;
+    rml:iterator "$.*" ;
+  ];
+
+  rml:subjectMap [
+    rml:template "http://example.com/seq{id}" ;
+    rml:gather ( [ rml:reference "values.*" ; ] ) ;
+    rml:gatherAs rdf:Seq ;  
+  ] ;
+  
+  rml:predicateObjectMap [
+    rml:predicate prov:wasDerivedFrom ;
+    rml:object <http://example.com/data.json> ;
+  ] .

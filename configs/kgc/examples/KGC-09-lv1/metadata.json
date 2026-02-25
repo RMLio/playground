@@ -1,0 +1,14 @@
+{
+    "id": "KGC-09-lv1",
+    "label": "Deeply nested data source",
+    "comment": "KGC-LV1",
+    "icon": "target",
+    "mapping": "mapping.ttl",
+    "data": [
+        {
+            "path": "data.json",
+            "type": "json",
+            "value": ""
+        }
+    ]
+}

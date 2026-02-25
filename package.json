@@ -1,0 +1,74 @@
+{
+  "name": "@rmlio/matey",
+  "version": "2.0.0-alpha",
+  "type": "module",
+  "scripts": {
+    "predev": "node scripts/ensure-config.js",
+    "prebuild": "node scripts/ensure-config.js",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run --silent=true --reporter='verbose'",
+    "test-local": "RML_MAPPER_URL='http://localhost:4000/execute' vitest run --silent=true --reporter='verbose'",
+    "lint:markdown": "markdownlint-cli2",
+    "lint:markdown:fix": "markdownlint-cli2 --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RMLio/matey"
+  },
+  "keywords": [
+    "RML",
+    "YAML",
+    "Parser"
+  ],
+  "author": "Ben De Meester",
+  "contributors": [
+    "René Van Der Schueren",
+    "Pieter Heyvaert (https://pieterheyvaert.com)",
+    "Dylan Van Assche",
+    "Gerald Haesendonck",
+    "Martin Vanbrabant"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@graphy/content.ttl.read": "latest",
+    "@graphy/content.ttl.write": "latest",
+    "@graphy/memory.dataset.fast": "latest",
+    "@rmlio/yarrrml-parser": "^1.12.1",
+    "beaver-logger": "^4.0.28",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.6.1",
+    "brace": "^0.11.1",
+    "brfs": "^2.0.2",
+    "core-js": "^3.16.0",
+    "express": "^4.17.1",
+    "extend": "^3.0.2",
+    "handlebars": "^4.7.7",
+    "jquery": "^3.6.0",
+    "n3": "^1.11.1",
+    "popper.js": "^1.16.1",
+    "prefix-ns": "^0.1.2",
+    "q": "^1.5.1",
+    "swls-codemirror": "^0.1.2",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "@codingame/esbuild-import-meta-url-plugin": "^1.0.3",
+    "browser-sync": "^2.27.5",
+    "changefrog": "^1.1.0",
+    "jsdom": "^27.3.0",
+    "jsdom-worker-fix": "^0.1.8",
+    "markdownlint-cli2": "^0.18.1",
+    "node-fetch": "^2.6.7",
+    "rimraf": "^6.0.1",
+    "terser": "^5.7.1",
+    "vite": "^7.2.7",
+    "vite-plugin-node-polyfills": "^0.24.0",
+    "vite-plugin-wasm": "^3.5.0",
+    "vitest": "^4.0.15",
+    "xhr-mock": "latest"
+  },
+  "main": "lib/main.js",
+  "description": "Web-based editor for YARRRML rules."
+}

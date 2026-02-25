@@ -1,0 +1,4 @@
+entity,class,confidence
+Alice,Person,0.8
+Bobby,Dog,0.6
+Charlie,Cat,0.9

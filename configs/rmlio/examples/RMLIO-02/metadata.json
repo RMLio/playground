@@ -1,0 +1,19 @@
+{
+    "id": "RMLIO-02",
+  "label": "Combination of a JSON and a CSV source",
+  "comment": "RMLIO translation of combination of JSON and CSV",
+  "icon": "",
+  "mapping": "mapping.ttl",
+  "data": [
+    {
+      "path": "persons.json",
+      "type": "json",
+      "value": ""
+    },
+    {
+      "path": "movies.csv",
+      "type": "csv",
+      "value": ""
+    }
+  ]
+}

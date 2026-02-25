@@ -1,93 +1,160 @@
-# playground
+# RML Playground
 
+A browser-based editor meant for writing RML rules, supported by the [Semantic Web Language Server](https://github.com/SemanticWebLanguageServer/swls) (SWLS)
+The rules can be executed on a sample of the data,
+which allows users to inspect the generated RDF data.
+The generated RDF data can be exported for use outside of the RML Playground.
 
+<!-- omit in toc -->
+## Table of contents
 
-## Getting started
+* [Requirements](#requirements)
+* [Installation](#installation)
+* [Usage](#usage)
+  * [Setting up the RMLMapper Web API endpoint](#setting-up-the-rmlmapper-web-api-endpoint)
+  * [Configuring the RML Playground](#configuring-the-rml-playground)
+* [Additional configuration sets](#additional-configuration-sets)
+* [Developing](#developing)
+  * [Installation](#installation-1)
+  * [Debugging](#debugging)
+  * [Building](#building)
+* [Run tests](#run-tests)
+* [License](#license)
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## Requirements
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://gitlab.ilabt.imec.be/rml/ui/playground.git
-git branch -M main
-git push -uf origin main
-```
-
-## Integrate with your tools
-
-- [ ] [Set up project integrations](https://gitlab.ilabt.imec.be/rml/ui/playground/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+[Node.js](https://nodejs.org/en/download/)
 
 ## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+
+```shell
+npm install
+```
 
 ## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+### Setting up the RMLMapper Web API endpoint
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+The RML Playground generates RDF data through a remote server.
+For this, the RML Playground requires you to provide
+an RML mapping engine endpoint.
+You can either provide the URL of an existing server, or
+set one up yourself by following
+[these instructions](https://github.com/RMLio/rmlmapper-webapi-js).
+Make sure that you provide the correct URL for the endpoint during [configuration](#configuring-the-rml-playground).
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+### Configuring the RML Playground
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+To configure RML Playground, create a configuration file `config.json` in the project root.
+The configuration options are (all keys are optional unless noted):
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+- `"title"`: (string) Title displayed in the browser tab and as page header.
+- `"logo"`: (string) "logo_kgc" or "logo_rmlio". 
+- `"surveyUrl"`: (string) URL used for the feedback / survey link in the UI.
+- `"RMLspecifications"`: (array of objects, optional) Array of RML specification objects, each with `url` and `label` properties. 
+- `"RMLengine"`: (object) Object containing RML mapping engine information:
+  - `"url"`: (string) URL or documentation link for the RML engine.
+  - `"label"`: (string) Display name for the RML engine.
+  - `"webAPI"`: (string) URL of the RMLMapper Web API endpoint used to execute mappings.
+- `"SWLSconfig"`: (Object) Settings for the Semantic Web Language Server:
+  - `ontologies`: (array of strings) URLs of ontology resources
+  - `shapes`: (array of strings) URLs of SHACL shape files
+  - `prefix_disabled`: (array of strings) Prefixes of ontologies that must not be imported from [LOV](https://lov.linkeddata.es/dataset/lov/vocabs/) 
+  - `completion`: (object): Autocompetion settings with two keys: 
+    - `strict`: (array of strings): URLs of namespace requiring strict autocompletion (respecting the defined domain)
+    - `loose`: (array of strings): URLs of namespace requiring loose autocompletion 
+- `"examples"`: (array of objects) Example objects used to populate the examples dropdown. Each example is a JSON object describing the mapping, input data and metadata.
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+Notes:
+- The file `config.json` is git-ignored. If you do not provide one, the build scripts copy `config-default.json` into place.
+- You can add more logo's in ./lib/resources, with update in ./lib/front.js.
+
+Additional configuration sets
+-----------------------------
+
+You can maintain multiple configuration sets under the `configs/` folder. Each configuration should be placed in its own subdirectory and contain a `config.json` 
+with an additional key `èxampleDirs` with the relative paths to example subfolders inside that subdirectory, containing:
+- `metadata.json` — metadata file with `id`, `label`,  `mapping` (filename), and `data` (array of file objects)
+- a mapping file - referenced in `metadata.json`
+- data files — referenced in `metadata.json`
+
+```
+configs/
+  config1/
+    config.json
+    examples/
+      example1/ 
+        input1.json
+        mapping.ttl
+        metadata.json
+  config2/
+    config.json
+    examples/
+      example1/ 
+        input1.json
+        mapping.ttl
+        metadata.json
+      example2/ 
+        input1.csv
+        mapping.ttl
+        metadata.json
+```
+
+To activate one of these configurations, run the helper script:
+
+```bash
+node scripts/select-config.cjs <config-name>
+# example
+node scripts/select-config.cjs rmlio
+```
+
+This script will add the examples from the subfolders to the selected `config.json`,
+before placing the config in the root of this  repository.
+
+
+## Developing
+
+### Installation
+
+Install dependencies via
+
+   ```shell
+   npm install
+   ```
+
+### Debugging
+
+1. Build for debugging and spin up an HTTP server via
+
+   ```shell
+   npm run dev
+   ```
+
+2. Open <http://localhost:5173> in the browser.
+
+### Building
+
+Build a minimized version into `./dist`:
+
+   ```shell
+   npm run build
+   ```
+
+## Run tests
+
+NOTE: the tests are temporarily disabled.
+
+Run the following commands from inside the project directory:
+
+```shell
+npm install
+# for CI/CD, assuming that an RMLMapper endpoint with URL <https://rml.io/api/rmlmapper/execute> is up and running:
+npm test
+# for local testing, assuming that an RMLMapper endpoint with URL <http://localhost:4000/execute> is up and running:
+npm run test-local
+```
 
 ## License
-For open source projects, say how it is licensed.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+This code is copyrighted by [Ghent University – imec](http://knows.idlab.ugent.be/) and
+released under the [MIT license](http://opensource.org/licenses/MIT).

@@ -1,0 +1,14 @@
+{
+    "id": "RMLIO-06",
+  "label": "Basic LDES of sensor data",
+  "comment": "RMLIO translation of basic LDES",
+  "icon": "",
+  "mapping": "mapping.ttl",
+  "data": [
+    {
+      "path": "readings-1.csv",
+      "type": "csv",
+      "value": ""
+    }
+  ]
+}

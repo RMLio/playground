@@ -1,0 +1,113 @@
+<div class="page-header">
+    <h1 class="page-title">
+        {{#if logo}}<img src="{{logo}}" alt="" class="config-logo" />{{/if}}
+        <span class="page-title-text">{{title}}</span>
+    </h1>
+</div>
+<div class="container">
+    <p>
+        <b>Try out your RML mappings</b> without installing anything, 
+        in your browser.
+        You can add your input data on the left (yellow box),
+        write your mapping rules in the middle (green box) and get the generated RDF (purple box).
+        Some examples are available as well to get you started quickly.
+        You can load those below by selecting one in the dropdown and click on the 'Load Example' button.
+        Once loaded, you can edit them as you wish.
+    </p>
+    <p> This playground demonstrates the following <b>RML specifications</b>: {{{RMLspecifications}}}.
+        The <b>RML mapping engine</b> {{{RMLengine}}} generates RDF data.
+    </p>
+    <p>
+        We are conducting a <b>user study</b>
+        to evaluate and improve this playground. 
+        Please share your feedback
+            <a href="{{surveyUrl}}" target="_blank">here</a>.
+    </p>
+    <a class="anchor" id="edit-matey"></a>
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <a class="anchor" id="edit-matey"></a>
+                    <b>Select example to load:</b>
+                </td>
+                <td>
+                    <select id="examples-matey" class="custom-select"></select>
+                <td>
+                    <button id="example-btn-matey" type="button" class="btn btn-warning"
+                        title="Load the example into Matey, all changes will be lost!">Load Example</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="alert-container-matey">
+        <div style="padding: 5px">
+            <div id="alerts-matey"></div>
+        </div>
+    </div>
+</div>
+<div style="margin: 15px">
+    <div style="padding-bottom: 15px;">
+        <button id="clear-btn-matey" type="button" class="btn btn-danger" title="Clear all input and state.">Clear
+            ALL</button>
+        <button id="ld-btn-matey" type="button" class="btn btn-success"
+            title="Generate RDF based upon input data and YARRRML rules.">Generate RDF</button>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-6" id="div-input-data-matey"
+            style="background-color: rgba(255, 193, 7, 0.33); padding: 15px;">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle rounded-0" id="input-button-matey"
+                    style="background-color: #2F3129; border-width: 0" type="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Input: Data sources
+                </button>
+                <span id="data-source-delete-matey">
+                    <button class="btn btn-danger btn-sm" data-remove_id="' + id + '">&times;</button>
+                </span>
+                <div class="dropdown-menu rounded-0" aria-labelledby="dropdownMenuButton">
+                    <div class="nav" id="dropdown-data-chooser-matey">
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item rounded-0" href="#" id="data-create-matey">Create new source</a>
+                    <a class="dropdown-item rounded-0" href="#" id="data-load-matey">Load remote source (HTTP GET)</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item rounded-0" href="#" id="data-dl-matey">Download</a>
+                </div>
+            </div>
+            <div id="data-matey" class="tab-content"></div>
+        </div>
+        <div class="col-md-6" id="div-mapping-matey" style="background-color: rgba(32, 201, 151, 0.33); padding: 15px;">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle rounded-0"
+                    style="background-color: #2F3129; border-width: 0" type="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Input: Mapping rules
+                </button>
+                <div class="dropdown-menu rounded-0" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item rounded-0" href="#" id="mapping-load-matey">Load remote rules (HTTP GET)</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item rounded-0" href="#" id="mapping-dl-matey">Download</a>
+                </div>
+            </div>
+            <div id="editor-mapping-matey" class="ace-editor"></div>
+        </div>
+        <div class="col-md-12" id="div-output-data-matey"
+            style="background-color: rgba(111, 66, 193, 0.33); padding: 15px;">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle rounded-0" id="output-button-matey"
+                    style="background-color: #2F3129; border-width: 0" type="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Output: generated RDF
+                </button>
+                <div class="dropdown-menu rounded-0" aria-labelledby="dropdownMenuButton">
+                    <div class="nav" id="dropdown-out-chooser-matey">
+                    </div>
+                    <a class="dropdown-item rounded-0" href="#" id="turtle-dl-matey">Download</a>
+                </div>
+            </div>
+            <div id="output-matey" class="tab-content"></div>
+        </div>
+    </div>
+</div>

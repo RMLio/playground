@@ -1,0 +1,66 @@
+@prefix rml: <http://w3id.org/rml/> .
+@prefix rmlc: <http://w3id.org/rml/core#> .
+@prefix rmlv: <http://w3id.org/rml/vocab#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <http://example.com/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# RML-STAR Example: Generating RDF-star triples with confidence annotations
+# 
+# This mapping demonstrates how to use RML-STAR to generate quoted triples.
+# The inner triples map generates type statements, which are then quoted
+# and annotated with confidence values by the outer triples map.
+#
+# Expected RDF-star output (N-Triples-star format):
+#   ex:Alice a ex:Person .
+#   << ex:Alice a ex:Person >> ex:confidence 0.8 .
+#   ex:Bobby a ex:Dog .
+#   << ex:Bobby a ex:Dog >> ex:confidence 0.6 .
+#   ex:Charlie a ex:Cat .
+#   << ex:Charlie a ex:Cat >> ex:confidence 0.9 .
+
+# Inner Triples Map: generates type triples (both asserted and quoted)
+<#TypeTriplesMap>
+    a rml:AssertedTriplesMap ;
+    rml:logicalSource <#CSVSource> ;
+    rml:subjectMap [
+        a rml:SubjectMap ;
+        rml:template "http://example.com/{entity}"
+    ] ;
+    rml:predicateObjectMap [
+        a rml:PredicateObjectMap ;
+        rml:predicate rdf:type ;
+        rml:objectMap [
+            a rml:ObjectMap ;
+            rml:template "http://example.com/{class}"
+        ]
+    ] .
+
+# Outer Triples Map: generates confidence annotations using quoted triples
+<#ConfidenceTriplesMap>
+    a rml:AssertedTriplesMap ;
+    rml:logicalSource <#CSVSource> ;
+    rml:subjectMap [
+        a rml:SubjectMap ;
+        # Star Map: creates a quoted triple from the inner map as the subject
+        rml:quotedTriplesMap <#TypeTriplesMap>
+    ] ;
+    rml:predicateObjectMap [
+        a rml:PredicateObjectMap ;
+        rml:predicate ex:confidence ;
+        rml:objectMap [
+            a rml:ObjectMap ;
+            rml:reference "confidence" ;
+            rml:datatype xsd:decimal
+        ]
+    ] .
+
+<#CSVSource>
+    a rml:LogicalSource ;
+    rml:source [
+        a rml:RelativePathSource , rml:Source ;
+        rml:root rml:MappingDirectory ;
+        rml:path "data.csv" ;
+    ] ;
+    rml:referenceFormulation rml:CSV .

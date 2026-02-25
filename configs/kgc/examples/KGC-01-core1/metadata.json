@@ -1,0 +1,14 @@
+{
+    "id": "KGC-01-core1",
+    "label": "Simple json source",
+    "comment": "KGC-CORE1",
+    "icon": "target",
+    "mapping": "mapping.ttl",
+    "data": [
+        {
+            "path": "data.json",
+            "type": "json",
+            "value": ""
+        }
+    ]
+}

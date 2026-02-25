@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RINFData>
+<MemberStateCode Code="IT" Version="361" />
+<OperationalPoint>
+  <OPName Value="UDINE" />
+  <UniqueOPID Value="MT03026" />
+  <OPTafTapCode IsApplicable="Y" Value="MT03026" />
+  <OPType Value="140" OptionalValue="domestic border point" />  
+  <OPGeographicLocation Longitude="+13.2420274" Latitude="46.0557811" />  	
+  <OPRailwayLocation Kilometer="0.000" NationalIdentNum="UDINE-CIVIDALE" />
+</OperationalPoint>
+<OperationalPoint>
+  <OPName Value="Deviatoio ingresso Udine Deposito - Officina" />
+  <UniqueOPID Value="MT17001" />
+  <OPTafTapCode IsApplicable="Y" Value="MT17001" />
+  <OPType Value="50" OptionalValue="depot or workshop" />  
+  <OPGeographicLocation Longitude="+13.2557789" Latitude="46.0615990" />
+  <OPRailwayLocation Kilometer="1.259" NationalIdentNum="UDINE-CIVIDALE" />
+  <OPTrack>
+    <OPTrackIMCode Value="3379" />
+    <OPTrackIdentification Value="LO1-BC" />
+    <OPTrackParameter ID="IDE_ECVerification" IsApplicable="N" />
+    <OPTrackParameter ID="IDE_EIDemonstration" IsApplicable="N" />
+    <OPTrackParameter ID="IPP_FreightCorridor" IsApplicable="N" />
+    <OPTrackParameter ID="ILL_Gauging" IsApplicable="Y" Value="10" OptionalValue="GA"/>
+    <OPTrackParameter ID="IPP_TENClass" IsApplicable="Y" Value="40" OptionalValue="Off TEN" />
+    <OPTrackParameter ID="IPP_LineCat" IsApplicable="Y" Value="110" OptionalValue="F3" />
+    <OPTrackParameter ID="IPP_LineCat" IsApplicable="Y" Value="50" OptionalValue="P5" />
+    <OPTrackParameter ID="ILL_InteropGauge" IsApplicable="Y" Value="10" OptionalValue="GA" />
+    <OPTrackParameter ID="ILL_MultiNatGauge" IsApplicable="Y" Value="40" OptionalValue="none" />
+    <OPTrackParameter ID="ILL_NatGauge" IsApplicable="Y" Value="180" OptionalValue="FS" />
+    <OPTrackParameter ID="ITP_NomGauge" IsApplicable="Y" Value="30" OptionalValue="1435" />	
+  </OPTrack>
+</OperationalPoint>
+</RINFData>

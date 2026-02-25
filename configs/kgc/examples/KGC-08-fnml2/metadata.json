@@ -1,0 +1,14 @@
+{
+    "id": "KGC-08-fnml2",
+    "label": "Nested functions - replace & toUppercase",
+    "comment": "KGC-FNML example using nested functions: string_replace (spaces to underscores) then toUpperCase",
+    "icon": "function",
+    "mapping": "mapping.ttl",
+    "data": [
+        {
+            "path": "data.json",
+            "type": "json",
+            "value": ""
+        }
+    ]
+}

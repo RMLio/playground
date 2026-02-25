@@ -1,0 +1,226 @@
+@import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../fonts/icomoon.css";
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-home:before {
+  content: "\e900";
+}
+
+.icon-bubbles:before {
+  content: "\e96c";
+}
+
+.icon-user:before {
+  content: "\e971";
+}
+
+.icon-spinner9:before {
+  content: "\e982";
+}
+
+.icon-spinner11:before {
+  content: "\e984";
+}
+
+.icon-power:before {
+  content: "\e9b5";
+}
+
+.icon-download2:before {
+  content: "\e9c5";
+}
+
+.icon-link:before {
+  content: "\e9cb";
+}
+
+.icon-warning:before {
+  content: "\ea07";
+}
+
+.icon-notification:before {
+  content: "\ea08";
+}
+
+.icon-question:before {
+  content: "\ea09";
+}
+
+.icon-info:before {
+  content: "\ea0c";
+}
+
+.icon-cancel-circle:before {
+  content: "\ea0d";
+}
+
+.icon-cross:before {
+  content: "\ea0f";
+}
+
+.icon-checkmark:before {
+  content: "\ea10";
+}
+
+.icon-cog:before {
+  content: "\e994";
+}
+
+.icon-cogs:before {
+  content: "\e995";
+}
+
+/*CUSTOM STYLES*/
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  padding-top: 3.5rem;
+}
+
+main {
+  padding-bottom: 8px;
+}
+
+.ace-editor {
+  min-height: 300px;
+  font-size: 14px;
+}
+
+img.jumbo-logo-lg {
+  width: 164px;
+}
+
+img.jumbo-logo {
+  width: 92px;
+}
+
+img.inline-logo {
+  height: 1rem;
+}
+
+#alert-container-matey {
+  position: fixed;
+  top: -5px;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+#alerts-matey div {
+  margin: 4px auto;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+a.anchor {
+  display: block;
+  position: relative;
+  top: -3.6rem;
+  visibility: hidden;
+}
+
+.bd-title {
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+  font-weight: 300;
+}
+
+#ld-btn-matey {
+  float: right;
+}
+
+#modes-matey {
+  width: max-content;
+}
+
+#examples-matey {
+  width: max-content;
+}
+
+/* Header / config logo */
+.page-header {
+  margin: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.page-title {
+  text-align: center;
+  font-weight: 400;
+  margin: 0;
+}
+
+.config-logo {
+  height: 48px;
+  vertical-align: middle;
+  margin-right: 12px;
+}
+
+.page-title-text {
+  vertical-align: middle;
+}
+
+
+/* Make the alerts container right-align its children */
+#alerts-matey {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  /* Right-align alerts */
+  gap: 4px;
+}
+
+/* Avoid auto-centering; provide explicit spacing instead */
+#alerts-matey>.alert {
+  margin: 4px 8px;
+}
+
+/* On wider screens, don't stretch to full width; keep it neat on the right */
+@media (min-width: 577px) {
+  #alerts-matey>.alert {
+    width: auto;
+    /* shrink to content up to max-width */
+  }
+}
+
+/* Scrollable alert body */
+.alert .alert-body {
+  max-height: 240px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 4px;
+}
+
+/* Smaller max-height on very small screens */
+@media (max-width: 576px) {
+  .alert .alert-body {
+    max-height: 180px;
+  }
+}

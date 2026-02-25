@@ -1,0 +1,77 @@
+{
+  "title": "RML.rmlio Playground",
+  "RMLspecifications": [
+    {
+      "url": "https://rml.io/specs/rml/",
+      "label": "initial RML specification published on rml.io"
+    },
+    {
+      "url": "https://fno.io/rml/",
+      "label": "RML-FNML"
+    },
+    {
+      "url": "https://rml.io/specs/rml-target/",
+      "label": "RML-Target"
+    },
+    {
+      "url": "https://knowledgeonwebscale.github.io/incrml-spec/",
+      "label": "incRML"
+    },
+    {
+      "url": "https://rml.io/specs/access/httprequest/",
+      "label": "RML HTTPRequest"
+    },
+    {
+      "url": "https://rml.io/specs/target/dynamictarget/",
+      "label": "RML Dynamic Target"
+    }
+  ],
+  "RMLengine": {
+    "url": "https://github.com/RMLio/rmlmapper-java/releases/tag/v8.1.0",
+    "label": "RMLMapper v8.1.0",
+    "webAPI": "https://rml.io/api/rmlmapper/execute"
+  },
+  "logo": "logo_rmlio",
+  "surveyUrl": "https://docs.google.com/forms/d/e/1FAIpQLScGDS6W3BBMje5DpqT6HOwAkIrhFHg97_wjJbJoIp8yf0C4zQ/viewform?usp=header",
+  "SWLSconfig": {
+    "ontologies": [
+      "https://www.w3.org/ns/r2rml.ttl",
+      "https://elsdvlee.github.io/rmlioresources/ontology.ttl",
+      "https://elsdvlee.github.io/rmlioresources/fno.ttl",
+      "https://elsdvlee.github.io/rmlioresources/rmle.ttl"
+    ],
+    "shapes": [],
+    "prefix_disabled": [
+      "rml-",
+      "rml"
+    ],
+    "completion": {
+      "strict": [
+        "http://semweb.mmlab.be/ns/rml#",
+        "http://www.w3.org/ns/r2rml#",
+        "https://w3id.org/function/ontology#",
+        "https://w3id.org/imec/rml/ns/extensions#",
+        "http://semweb.mmlab.be/ns/ql#"
+      ]
+    }
+  },
+  "exampleDirs": [
+    "examples/RMLIO-01",
+    "examples/RMLIO-02",
+    "examples/RMLIO-03",
+    "examples/RMLIO-04",
+    "examples/RMLIO-05",
+    "examples/RMLIO-06",
+    "examples/RMLIO-07",
+    "examples/RMLIO-08", 
+    "examples/S-HTTPREQUEST-01",
+    "examples/T-DYNAMICTARGET-02"
+  ],
+  "defaultPrefixes": {
+    "rml": "http://semweb.mmlab.be/ns/rml#",
+    "rr": "http://www.w3.org/ns/r2rml#",
+    "fno": "https://w3id.org/function/ontology#",
+    "rmle": "https://w3id.org/imec/rml/ns/extensions#",
+    "ql": "http://semweb.mmlab.be/ns/ql#"
+  }
+}

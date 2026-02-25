@@ -1,0 +1,49 @@
+@prefix rml: <http://w3id.org/rml/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix map: <http://mapping.example.com/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+map:map_person_000 rml:logicalSource map:source_000 ;
+    rml:subjectMap [
+        rml:logicalTarget map:target_000 ;
+        rml:template "http://example.org/{./@id}"
+    ] ;
+    rml:predicateObjectMap [
+        rml:predicate foaf:name ;
+        rml:predicateMap [
+            rml:logicalTarget map:target_001 ;
+            rml:constant foaf:name
+        ] ;
+        rml:objectMap [
+            rml:reference "./name"
+        ]
+    ], [
+        rml:predicate foaf:nickname ;
+        rml:predicateMap [
+            rml:constant foaf:nickname
+        ] ;
+        rml:objectMap [
+            rml:reference "./nickname"
+        ]
+    ] .
+
+map:source_000 rml:iterator "/Supergirl/Character" ;
+    rml:referenceFormulation rml:XPath ;
+    rml:source map:source_000_rsp .
+
+map:source_000_rsp a rml:RelativePathSource ;
+    rml:path "Supergirl.xml" .
+
+map:target_000 rml:serialization <http://www.w3.org/ns/formats/N-Triples> ;
+    rml:target map:dcat_000 .
+
+map:dcat_000 a <http://www.w3.org/ns/dcat#Dataset> ;
+    <http://www.w3.org/ns/dcat#dataDump> <file://./data/dump1.nt> .
+
+map:target_001 rml:serialization <http://www.w3.org/ns/formats/Turtle> ;
+    rml:target map:void_000 .
+
+map:void_000 <http://rdfs.org/ns/void#dataDump> <file://./data/dump2.ttl> ;
+    rdf:type <http://rdfs.org/ns/void#Dataset> .
+
+

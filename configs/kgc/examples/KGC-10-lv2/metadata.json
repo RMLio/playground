@@ -1,0 +1,19 @@
+{
+    "id": "KGC-10-lv2",
+    "label": "Joining data sources",
+    "comment": "KGC-LV2",
+    "icon": "target",
+    "mapping": "mapping.ttl",
+    "data": [
+        {
+            "path": "data.json",
+            "type": "json",
+            "value": ""
+        },
+        {
+            "path": "data.csv",
+            "type": "csv",
+            "value": ""
+        }
+    ]
+}

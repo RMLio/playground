@@ -1,0 +1,19 @@
+{
+    "id": "RMLIO-05",
+  "label": "GTFS CSV data",
+  "comment": "RMLIO translation of GTFS CSV data",
+  "icon": "",
+  "mapping": "mapping.ttl",
+  "data": [
+    {
+      "path": "AGENCY.csv",
+      "type": "csv",
+      "value": ""
+    },
+    {
+      "path": "ROUTES.csv",
+      "type": "csv",
+      "value": ""
+    }
+  ]
+}

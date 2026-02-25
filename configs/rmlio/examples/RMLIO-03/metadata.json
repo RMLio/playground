@@ -1,0 +1,13 @@
+{
+    "id": "RMLIO-03",
+  "label": "Facebook JSON data",
+  "icon": "facebook",
+  "mapping": "mapping.ttl",
+  "data": [
+    {
+      "path": "data.json",
+      "type": "json",
+      "value": ""
+    }
+  ]
+}

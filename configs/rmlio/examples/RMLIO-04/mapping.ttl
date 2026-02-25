@@ -1,0 +1,59 @@
+@prefix rr:   <http://www.w3.org/ns/r2rml#> .
+@prefix rml:  <http://semweb.mmlab.be/ns/rml#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ql:   <http://semweb.mmlab.be/ns/ql#> .
+@prefix map:  <http://mapping.example.com/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+map:map_person_000
+
+    rml:logicalSource map:source_000 ;
+    rr:subjectMap [
+        rml:logicalTarget map:target_000 ;
+
+        rr:template "http://example.org/{./@id}"
+    ] ;
+    rr:predicateObjectMap [
+
+        rr:predicateMap[
+
+            rr:constant foaf:name ;
+            rml:logicalTarget map:target_001 ;
+        ] ;
+        rr:objectMap [
+
+            rml:reference "./name" ;
+        ]
+    ], [
+
+        rr:predicate foaf:nickname ;
+        rr:objectMap [
+
+            rml:reference "./nickname" ;
+        ]
+    ] .
+
+map:source_000
+
+    rml:source "Supergirl.xml" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/Supergirl/Character" .
+
+map:target_000
+    rdf:type <http://semweb.mmlab.be/ns/rml-target#LogicalTarget> ;
+    <http://semweb.mmlab.be/ns/rml-target#target> map:dcat_000 ;
+    <http://semweb.mmlab.be/ns/rml-target#serialization> <http://www.w3.org/ns/formats/N-Triples> .
+
+map:dcat_000
+    rdf:type <http://www.w3.org/ns/dcat#Dataset> ;
+    <http://www.w3.org/ns/dcat#dataDump> <file:///data/dump1.nt> .
+
+map:target_001
+    rdf:type <http://semweb.mmlab.be/ns/rml-target#LogicalTarget> ;
+    <http://semweb.mmlab.be/ns/rml-target#target> map:void_000 ;
+    <http://semweb.mmlab.be/ns/rml-target#serialization> <http://www.w3.org/ns/formats/Turtle> .
+
+map:void_000
+    rdf:type <http://rdfs.org/ns/void#Dataset> ;
+    <http://rdfs.org/ns/void#dataDump> <file:///data/dump2.ttl> .

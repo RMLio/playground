@@ -1,0 +1,14 @@
+{
+  "id": "RMLIO-01",
+  "label": "Simple JSON source",
+  "comment": "RMLIO translation of simple JSON source",
+  "icon": "",
+  "mapping": "mapping.ttl",
+  "data": [
+    {
+      "path": "data.json",
+      "type": "json",
+      "value": ""
+    }
+  ]
+}

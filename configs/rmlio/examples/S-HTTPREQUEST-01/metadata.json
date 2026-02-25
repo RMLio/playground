@@ -1,0 +1,12 @@
+{
+  "id": "HTTPREQUESTACCESS-01",
+  "label": "Adding data to Solid Pod using HTTP Request Access",
+  "mapping": "mapping.ttl",
+  "data": [
+    {
+      "path": "buildings.csv",
+      "type": "csv",
+      "value": ""
+    }
+  ]
+}

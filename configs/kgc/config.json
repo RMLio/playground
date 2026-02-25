@@ -1,0 +1,64 @@
+{
+    "title": "RML.kgc Playground",
+    "logo": "logo_kgc",
+    "RMLspecifications": [
+        {
+            "url": "https://w3id.org/rml/core/spec",
+            "label": "RML-Core"
+        }, 
+        {
+            "url": "https://w3id.org/rml/extension/io/spec",
+            "label": "RML-IO (except target)"
+        }, 
+        {
+            "url": "https://w3id.org/rml/extension/cc/spec",
+            "label": "RML-CC"
+        }, 
+        {
+            "url": "https://w3id.org/rml/extension/fnml/spec",
+            "label": "RML-FNML"
+        }, 
+        {
+            "url": "https://w3id.org/rml/extension/lv/spec",
+            "label": "RML-LV"
+        }
+    ],
+    "RMLengine": {
+        "url": "https://github.com/kg-construct/BURP/tree/kgc-2025-conformance",
+        "label": "BURP kgc-2025-conformance branch",
+        "webAPI": "https://rml.io/api/playground/rmlmapper/executeBurp"
+    },
+    "surveyUrl": "https://docs.google.com/forms/d/e/1FAIpQLScI3B3rvk-epf99IqXkgn5y2CbVMia99HJMOdgsB_skHT7RxQ/viewform?usp=header",
+    "SWLSconfig": {
+        "ontologies": [
+            "https://kg-construct.github.io/rml-resources/ontology.ttl"
+        ],
+        "shapes": [
+            "https://kg-construct.github.io/rml-resources/shapes.ttl"
+        ],
+        "prefix_disabled": [
+            "rml",
+            "rml-",
+            "r2rml"
+        ],
+        "completion": {
+            "strict": [
+                "http://w3id.org/rml/"
+            ]
+        }
+    },
+    "exampleDirs": [
+        "examples/KGC-01-core1",
+        "examples/KGC-02-core2",
+        "examples/KGC-03-io1",
+        "examples/KGC-05-cc1",
+        "examples/KGC-06-cc2",
+        "examples/KGC-07-fnml1",
+        "examples/KGC-08-fnml2",
+        "examples/KGC-09-lv1",
+        "examples/KGC-10-lv2"
+    ],
+    "defaultPrefixes": {
+        "rml": "http://w3id.org/rml/"
+    }   
+}

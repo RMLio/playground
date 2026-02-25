@@ -1,0 +1,19 @@
+{
+    "id": "KGC-02-core2",
+    "label": "Referencing Object Map",
+    "comment": "KGC-CORE2 example using referencing object map to join books with authors",
+    "icon": "link",
+    "mapping": "mapping.ttl",
+    "data": [
+        {
+            "path": "authors.json",
+            "type": "json",
+            "value": ""
+        },
+        {
+            "path": "books.json",
+            "type": "json",
+            "value": ""
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "DYNAMICTARGET-01",
+  "label": "Dynamic Target: Adding fine-grained data resources to Solid Pod",
+  "mapping": "mapping.ttl",
+  "data": [
+    {
+      "path": "buildings.csv",
+      "type": "csv",
+      "value": ""
+    }
+  ]
+}
