@@ -52,5 +52,5 @@
     ];
     rr:predicateObjectMap [
         rr:predicate <http://www.w3.org/ns/dcat#dataDump>;
-        rr:objectMap [ rr:template "<file:///data/building_{OwnerID}.nt" ];
+        rr:objectMap [ rr:template "file:///data/building_{OwnerID}.nt" ];
     ].
