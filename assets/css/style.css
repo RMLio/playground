@@ -187,40 +187,18 @@ a.anchor {
   vertical-align: middle;
 }
 
-
-/* Make the alerts container right-align its children */
-#alerts-matey {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  /* Right-align alerts */
-  gap: 4px;
+#alert-container-matey {
+  position: fixed;
+  top: -5px;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+    max-height: 240px;
+      overflow-y: auto;
+      overscroll-behavior: contain;
 }
 
-/* Avoid auto-centering; provide explicit spacing instead */
-#alerts-matey>.alert {
-  margin: 4px 8px;
+#alerts-matey div {
+  margin: 4px auto;
 }
 
-/* On wider screens, don't stretch to full width; keep it neat on the right */
-@media (min-width: 577px) {
-  #alerts-matey>.alert {
-    width: auto;
-    /* shrink to content up to max-width */
-  }
-}
-
-/* Scrollable alert body */
-.alert .alert-body {
-  max-height: 240px;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  padding-right: 4px;
-}
-
-/* Smaller max-height on very small screens */
-@media (max-width: 576px) {
-  .alert .alert-body {
-    max-height: 180px;
-  }
-}
