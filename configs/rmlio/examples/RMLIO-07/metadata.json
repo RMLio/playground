@@ -1,6 +1,6 @@
 {
     "id": "RMLIO-07",
-  "label": "Updated LDES of sensor data",
+  "label": "(IncRML) Updated LDES of sensor data",
   "comment": "RMLIO translation of updated LDES",
   "icon": "",
   "mapping": "mapping.ttl",

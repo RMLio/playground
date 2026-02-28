@@ -1,6 +1,6 @@
 {
     "id": "RMLIO-06",
-  "label": "Basic LDES of sensor data",
+  "label": "(IncRML) Basic LDES of sensor data",
   "comment": "RMLIO translation of basic LDES",
   "icon": "",
   "mapping": "mapping.ttl",

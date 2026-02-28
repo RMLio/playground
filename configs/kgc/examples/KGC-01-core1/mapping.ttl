@@ -1,7 +1,6 @@
 @prefix rml: <http://w3id.org/rml/> .
 @prefix map: <http://mapping.example.com/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix ex: <http://example.com/> .
 
 map:map_person_000 rml:logicalSource map:source_000 ;
     rml:subjectMap [
@@ -9,7 +8,7 @@ map:map_person_000 rml:logicalSource map:source_000 ;
         rml:class foaf:Person
     ] ;
     rml:predicateObjectMap [ 
-        rml:predicate ex:name ;
+        rml:predicate foaf:name ;
         rml:objectMap [
             rml:reference "firstname"
         ]

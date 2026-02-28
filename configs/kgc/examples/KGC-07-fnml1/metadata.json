@@ -1,6 +1,6 @@
 {
     "id": "KGC-07-fnml1",
-    "label": "Function mapping - toUppercase",
+    "label": "(FNML) Function mapping - toUppercase",
     "comment": "KGC-FNML example using the toUpperCase function to transform person names",
     "icon": "function",
     "mapping": "mapping.ttl",

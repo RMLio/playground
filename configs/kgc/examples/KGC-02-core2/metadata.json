@@ -1,6 +1,6 @@
 {
     "id": "KGC-02-core2",
-    "label": "Referencing Object Map",
+    "label": "(Core) Referencing Object Map",
     "comment": "KGC-CORE2 example using referencing object map to join books with authors",
     "icon": "link",
     "mapping": "mapping.ttl",

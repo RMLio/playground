@@ -1,6 +1,6 @@
 {
-  "id": "DYNAMICTARGET-01",
-  "label": "Dynamic Target: Adding fine-grained data resources to Solid Pod",
+  "id": "DYNAMICTARGET-02",
+  "label": "(Dynamic Target) Adding fine-grained data resources to Solid Pod",
   "mapping": "mapping.ttl",
   "data": [
     {

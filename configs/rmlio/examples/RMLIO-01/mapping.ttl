@@ -5,7 +5,6 @@
 @prefix ql:   <http://semweb.mmlab.be/ns/ql#> .
 @prefix map:  <http://mapping.example.com/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix ex:   <http://example.com/> .
 
 map:map_person_000
     rml:logicalSource map:source_000 ;
@@ -16,7 +15,7 @@ map:map_person_000
         rr:predicate rdf:type ;
         rr:object foaf:Person
     ], [
-        rr:predicate ex:name ;
+        rr:predicate foaf:name ;
         rr:objectMap [
             rml:reference "firstname" ;
         ]

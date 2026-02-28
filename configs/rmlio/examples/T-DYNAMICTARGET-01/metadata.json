@@ -1,6 +1,6 @@
 {
   "id": "DYNAMICTARGET-01",
-  "label": "Dynamic Target: Creating one file per entity",
+  "label": "(Dynamic Target) reating one file per entity",
   "mapping": "mapping.ttl",
   "data": [
     {

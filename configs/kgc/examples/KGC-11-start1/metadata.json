@@ -1,6 +1,6 @@
 {
     "id": "KGC-11-start1",
-    "label": "Quoted Triples - confidence annotations",
+    "label": "(Start) Quoted Triples - confidence annotations",
     "comment": "KGC-STAR example using quoted triples to annotate type statements with confidence scores",
     "icon": "star",
     "mapping": "mapping.ttl",

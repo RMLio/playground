@@ -1,6 +1,6 @@
 {
     "id": "KGC-04-io2",
-    "label": "Target for specifying output",
+    "label": "(IO) Target for specifying output",
     "comment": "KGC-IO2",
     "icon": "target",
     "mapping": "mapping.ttl",

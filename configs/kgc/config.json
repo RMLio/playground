@@ -37,9 +37,7 @@
             "https://kg-construct.github.io/rml-resources/shapes.ttl"
         ],
         "prefix_disabled": [
-            "rml",
-            "rml-",
-            "r2rml"
+
         ],
         "completion": {
             "strict": [

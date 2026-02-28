@@ -1,6 +1,6 @@
 {
     "id": "KGC-05-cc1",
-    "label": "Bag and list in object map",
+    "label": "(CC) Bag and list in object map",
     "comment": "KGC-CC1",
     "icon": "target",
     "mapping": "mapping.ttl",

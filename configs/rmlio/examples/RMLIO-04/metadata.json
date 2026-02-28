@@ -1,6 +1,6 @@
 {
     "id": "RMLIO-04",
-  "label": "Targets for specifying output",
+  "label": "(Target) Targets for specifying output",
   "comment": "RMLIO translation of targets for output",
   "icon": "target",
   "mapping": "mapping.ttl",
