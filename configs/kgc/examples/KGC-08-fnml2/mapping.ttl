@@ -1,52 +1,43 @@
-@prefix rml: <http://w3id.org/rml/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix grel: <http://users.ugent.be/~bjdmeest/function/grel.ttl#> .
+@prefix rml: <http://w3id.org/rml/>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix grel: <http://users.ugent.be/~bjdmeest/function/grel.ttl#>.
 
-<#JSONSource>
-    rml:source [ 
-        a rml:RelativePathSource ;
-        rml:root rml:MappingDirectory;
-        rml:path "data.json"
-    ] ;
-    rml:referenceFormulation rml:JSONPath ;
-    rml:iterator "$[*]" .
+<#JSONSource> rml:source [
+  a rml:RelativePathSource;
+  rml:root rml:MappingDirectory;
+  rml:path "data.json";
+];
+  rml:referenceFormulation rml:JSONPath;
+  rml:iterator "$[*]".
 
-<#PersonMapping>
-    rml:logicalSource <#JSONSource> ;
-    rml:subjectMap [
-        rml:template "http://example.com/person/{id}"
-    ] ;
-    rml:predicateObjectMap [
-        rml:predicate foaf:name ;
-        rml:objectMap [
+<#PersonMapping> rml:logicalSource <#JSONSource>;
+  rml:subjectMap [ rml:template "http://example.com/person/{id}" ];
+  rml:predicateObjectMap [
+    rml:predicate foaf:name;
+    rml:objectMap [
+      rml:functionExecution [
+        rml:function grel:toUpperCase;
+        rml:input [
+          rml:parameter grel:valueParam;
+          rml:inputValueMap [
             rml:functionExecution [
-                rml:function grel:toUpperCase ;
-                rml:input [
-                    rml:parameter grel:valueParam ;
-                    rml:inputValueMap [
-                        rml:functionExecution [
-                            rml:function grel:string_replace ;
-                            rml:input
-                                [
-                                    rml:parameter grel:valueParam ;
-                                    rml:inputValueMap [
-                                        rml:reference "fullname"
-                                    ]
-                                ],
-                                [
-                                    rml:parameter grel:param_find ;
-                                    rml:inputValue " "
-                                ],
-                                [
-                                    rml:parameter grel:param_replace ;
-                                    rml:inputValue "_"
-                                ]
-                        ] ;
-                        rml:return grel:stringOut
-                    ]
-                ]
-            ] ;
-            rml:return grel:stringOut
-        ]
-    ] .
+              rml:function grel:string_replace;
+              rml:input [
+                rml:parameter grel:valueParam;
+                rml:inputValueMap [ rml:reference "fullname" ];
+              ], [
+                rml:parameter grel:param_find;
+                rml:inputValue " ";
+              ], [
+                rml:parameter grel:param_replace;
+                rml:inputValue "_";
+              ];
+            ];
+            rml:return grel:stringOut;
+          ];
+        ];
+      ];
+      rml:return grel:stringOut;
+    ];
+  ].
 

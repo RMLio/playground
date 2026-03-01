@@ -1,54 +1,51 @@
-@prefix rml: <http://w3id.org/rml/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix : <http://example.org/> .
+@prefix rml: <http://w3id.org/rml/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://example.org/>.
 
-:jsonSource a rml:LogicalSource ;
+:jsonSource a rml:LogicalSource;
   rml:source [
-    a rml:RelativePathSource , rml:Source ;
-    rml:root rml:MappingDirectory ;
-    rml:path "data.json" ;
-  ] ;
-  rml:referenceFormulation rml:JSONPath ;
-  rml:iterator "$.people[*]" .
+    a rml:RelativePathSource, rml:Source;
+    rml:root rml:MappingDirectory;
+    rml:path "data.json";
+  ];
+  rml:referenceFormulation rml:JSONPath;
+  rml:iterator "$.people[*]".
 
-:jsonView a rml:LogicalView ;
-  rml:viewOn :jsonSource ;
+:jsonView a rml:LogicalView;
+  rml:viewOn :jsonSource;
   rml:field [
-    a rml:ExpressionField ;
-    rml:fieldName "name" ;
-    rml:reference "$.name" ;
-  ] ;
+    a rml:ExpressionField;
+    rml:fieldName "name";
+    rml:reference "$.name";
+  ];
   rml:field [
-    a rml:IterableField ;
-    rml:fieldName "item" ;
-    rml:iterator "$.items[*]" ;
+    a rml:IterableField;
+    rml:fieldName "item";
+    rml:iterator "$.items[*]";
     rml:field [
-      a rml:ExpressionField ;
-      rml:fieldName "type" ;
-      rml:reference "$.type" ;
-    ] ;
+      a rml:ExpressionField;
+      rml:fieldName "type";
+      rml:reference "$.type";
+    ];
     rml:field [
-      a rml:ExpressionField ;
-      rml:fieldName "weight" ;
-      rml:reference "$.weight" ;
-    ] ;
-  ] .
+      a rml:ExpressionField;
+      rml:fieldName "weight";
+      rml:reference "$.weight";
+    ];
+  ].
 
-:triplesMapItem a rml:TriplesMap ;
-  rml:logicalSource :jsonView ;
-  rml:subjectMap [
-    rml:template "http://example.org/person/{name}/item/{item.#}" ;
-  ] ;
+:triplesMapItem a rml:TriplesMap;
+  rml:logicalSource :jsonView;
+  rml:subjectMap [ rml:template "http://example.org/person/{name}/item/{item.#}" ];
   rml:predicateObjectMap [
-    rml:predicate :hasName ;
-    rml:objectMap [
-      rml:reference "item.type" ;
-    ] ;
-  ] ;
+    rml:predicate :hasName;
+    rml:objectMap [ rml:reference "item.type" ];
+  ];
   rml:predicateObjectMap [
-    rml:predicate :hasWeight ;
+    rml:predicate :hasWeight;
     rml:objectMap [
-      rml:reference "item.weight" ;
-      rml:datatype xsd:integer ;
-    ] ;
-  ] .
+      rml:reference "item.weight";
+      rml:datatype xsd:integer;
+    ];
+  ].
+

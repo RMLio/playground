@@ -1,53 +1,53 @@
-@prefix rml: <http://w3id.org/rml/> .
-@prefix map: <http://mapping.example.com/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix schema: <http://schema.org/> .
-@prefix ex: <http://example.com/> .
+@prefix rml: <http://w3id.org/rml/>.
+@prefix map: <http://mapping.example.com/>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix schema: <http://schema.org/>.
+@prefix ex: <http://example.com/>.
 
-map:map_movie_000 a rml:TriplesMap ; 
-    rml:logicalSource map:source_001 ;
-    rml:subjectMap [
-        rml:template "http://example.com/movie/{slug}" ;
-        rml:class schema:Movie
-    ] ;
-    rml:predicateObjectMap [
-        rml:predicate schema:name ;
-        rml:objectMap [
-            rml:reference "title"
-        ]
-    ], [
-        rml:predicate ex:year ;
-        rml:objectMap [
-            rml:reference "year"
-        ]
-    ] .
-map:map_person_000 a rml:TriplesMap ; 
-    rml:logicalSource map:source_000 ;
-    rml:subjectMap [
-        rml:template "http://example.com/person/{firstname}" ;
-        rml:class foaf:Person
-    ] ;
-    rml:predicateObjectMap [
-        rml:predicate ex:name ;
-        rml:objectMap [
-            rml:reference "firstname"
-        ]
-    ], [
-        rml:predicate ex:likes ;
-        rml:objectMap [
-            rml:joinCondition [
-                rml:child "movie" ;
-                rml:parent "slug"
-            ] ;
-            rml:parentTriplesMap map:map_movie_000
-        ]
-    ] .
-map:source_000 rml:iterator "$.persons[*]" ;
-    rml:referenceFormulation rml:JSONPath ;
-    rml:source map:source_000_rsp .
-map:source_000_rsp a rml:RelativePathSource ;
-    rml:path "persons.json" .
-map:source_001 rml:referenceFormulation rml:CSV ;
-    rml:source map:source_001_rsp .
-map:source_001_rsp a rml:RelativePathSource ;
-    rml:path "movies.csv" .
+map:map_movie_000 a rml:TriplesMap;
+  rml:logicalSource map:source_001;
+  rml:subjectMap [
+    rml:template "http://example.com/movie/{slug}";
+    rml:class schema:Movie;
+  ];
+  rml:predicateObjectMap [
+    rml:predicate schema:name;
+    rml:objectMap [ rml:reference "title" ];
+  ], [
+    rml:predicate ex:year;
+    rml:objectMap [ rml:reference "year" ];
+  ].
+
+map:map_person_000 a rml:TriplesMap;
+  rml:logicalSource map:source_000;
+  rml:subjectMap [
+    rml:template "http://example.com/person/{firstname}";
+    rml:class foaf:Person;
+  ];
+  rml:predicateObjectMap [
+    rml:predicate ex:name;
+    rml:objectMap [ rml:reference "firstname" ];
+  ], [
+    rml:predicate ex:likes;
+    rml:objectMap [
+      rml:joinCondition [
+        rml:child "movie";
+        rml:parent "slug";
+      ];
+      rml:parentTriplesMap map:map_movie_000;
+    ];
+  ].
+
+map:source_000 rml:iterator "$.persons[*]";
+  rml:referenceFormulation rml:JSONPath;
+  rml:source [
+    a rml:RelativePathSource;
+    rml:path "persons.json";
+  ].
+
+map:source_001 rml:referenceFormulation rml:CSV;
+  rml:source [
+    a rml:RelativePathSource;
+    rml:path "movies.csv";
+  ].
+

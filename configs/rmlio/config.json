@@ -65,7 +65,6 @@
     "examples/RMLIO-07",
     "examples/RMLIO-08", 
     "examples/S-HTTPREQUEST-01",
-    "examples/T-DYNAMICTARGET-01",
     "examples/T-DYNAMICTARGET-02"
   ],
   "defaultPrefixes": {

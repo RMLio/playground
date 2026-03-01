@@ -1,42 +1,40 @@
-@prefix rml: <http://w3id.org/rml/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix grel: <http://users.ugent.be/~bjdmeest/function/grel.ttl#> .
+@prefix rml: <http://w3id.org/rml/>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix grel: <http://users.ugent.be/~bjdmeest/function/grel.ttl#>.
 
-<#JSONSource>
-    a rml:LogicalSource ;
-    rml:source [ 
-        a rml:RelativePathSource;
-        rml:root rml:MappingDirectory;
-        rml:path "data.json"
-    ] ;
-    rml:referenceFormulation rml:JSONPath ;
-    rml:iterator "$[*]" .
+<#JSONSource> a rml:LogicalSource;
+  rml:source [
+    a rml:RelativePathSource;
+    rml:root rml:MappingDirectory;
+    rml:path "data.json";
+  ];
+  rml:referenceFormulation rml:JSONPath;
+  rml:iterator "$[*]".
 
-<#PersonMapping>
-    a rml:TriplesMap ;
-    rml:logicalSource <#JSONSource> ;
-    rml:subjectMap [
-        a rml:SubjectMap ;
-        rml:template "http://example.com/person/{id}" ;
-    ] ;
-    rml:predicateObjectMap [
-        a rml:PredicateObjectMap ;
-        rml:predicate foaf:name ;
-        rml:objectMap [
-            a rml:ObjectMap ;
-            rml:functionExecution <#UppercaseExecution> ;
-            rml:return grel:stringOut ;] 
-    ]    
-.
+<#PersonMapping> a rml:TriplesMap;
+  rml:logicalSource <#JSONSource>;
+  rml:subjectMap [
+    a rml:SubjectMap;
+    rml:template "http://example.com/person/{id}";
+  ];
+  rml:predicateObjectMap [
+    a rml:PredicateObjectMap;
+    rml:predicate foaf:name;
+    rml:objectMap [
+      a rml:ObjectMap;
+      rml:functionExecution <#UppercaseExecution>;
+      rml:return grel:stringOut;
+    ];
+  ].
 
-<#UppercaseExecution>
-    a rml:FunctionExecution ;
-    rml:function grel:toUpperCase ;
-    rml:input [
-        a rml:Input ;
-        rml:parameter grel:valueParam ;
-        rml:inputValueMap [
-            a rml:TermMap ;
-            rml:reference "name"
-        ]
-    ] .
+<#UppercaseExecution> a rml:FunctionExecution;
+  rml:function grel:toUpperCase;
+  rml:input [
+    a rml:Input;
+    rml:parameter grel:valueParam;
+    rml:inputValueMap [
+      a rml:TermMap;
+      rml:reference "name";
+    ];
+  ].
+
