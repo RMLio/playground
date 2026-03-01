@@ -1,6 +1,6 @@
 {
   "id": "HTTPREQUESTACCESS-01",
-  "label": "(HTTP) Adding data to Solid Pod",
+  "label": "(HTTP Request Access) Adding data to Solid Pod",
   "mapping": "mapping.ttl",
   "data": [
     {
