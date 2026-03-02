@@ -51,7 +51,7 @@
     "popper.js": "^1.16.1",
     "prefix-ns": "^0.1.2",
     "q": "^1.5.1",
-    "swls-codemirror": "^0.1.2",
+    "swls-monaco": "^0.1.1",
     "yamljs": "^0.3.0"
   },
   "devDependencies": {
