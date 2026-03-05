@@ -1,0 +1,12 @@
+{
+  "id": "RMLIO-09",
+  "label": "(FNML) Convert to uppercase",
+  "mapping": "mapping.ttl",
+  "data": [
+    {
+      "path": "student.csv",
+      "type": "csv",
+      "value": ""
+    }
+  ]
+}
