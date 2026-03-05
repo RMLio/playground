@@ -35,14 +35,21 @@
   "surveyUrl": "https://docs.google.com/forms/d/e/1FAIpQLScGDS6W3BBMje5DpqT6HOwAkIrhFHg97_wjJbJoIp8yf0C4zQ/viewform?usp=header",
   "SWLSconfig": {
     "ontologies": [
-      "https://www.w3.org/ns/r2rml.ttl",
-      "https://elsdvlee.github.io/rmlioresources/ontology.ttl",
-      "https://elsdvlee.github.io/rmlioresources/fno.ttl",
-      "https://elsdvlee.github.io/rmlioresources/rmle.ttl"
+      "https://www.w3.org/ns/r2rml",
+      "http://semweb.mmlab.be/ns/rml",
+      "http://semweb.mmlab.be/ns/dataio",
+      "http://semweb.mmlab.be/ns/fnml",
+      "https://w3id.org/function/ontology/1.0.0",
+      "https://rml.io/ns/extensions/20250113/ontology.ttl"
     ],
     "shapes": [],
     "prefix_disabled": [
       "rml-",
+      "rr",
+      "r2rml",
+      "fnml",
+      "rmlt",
+      "rmle",
       "rml"
     ],
     "completion": {
@@ -51,7 +58,8 @@
         "http://www.w3.org/ns/r2rml#",
         "https://w3id.org/function/ontology#",
         "https://w3id.org/imec/rml/ns/extensions#",
-        "http://semweb.mmlab.be/ns/ql#"
+        "http://semweb.mmlab.be/ns/ql#",
+        "http://semweb.mmlab.be/ns/fnml#"
       ]
     }
   },
@@ -63,7 +71,8 @@
     "examples/RMLIO-05",
     "examples/RMLIO-06",
     "examples/RMLIO-07",
-    "examples/RMLIO-08", 
+    "examples/RMLIO-08",
+    "examples/RMLIO-09",
     "examples/S-HTTPREQUEST-01",
     "examples/T-DYNAMICTARGET-02"
   ],
