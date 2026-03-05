@@ -1,7 +1,7 @@
 {
     "id": "KGC-04-io2",
     "label": "(IO) Target for specifying output",
-    "comment": "KGC-IO2",
+    "comment": "awaiting implementation in Burp, afterwards also rmlmapper-java-wrapper need to be updated",
     "icon": "target",
     "mapping": "mapping.ttl",
     "data": [

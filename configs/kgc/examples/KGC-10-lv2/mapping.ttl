@@ -73,22 +73,34 @@
 :tm a rml:TriplesMap;
   rml:logicalSource :csvView;
   rml:subjectMap [
+    a rml:SubjectMap;
     rml:template "http://example.org/person/{id}";
     rml:class :Person;
   ];
   rml:predicateObjectMap [
+    a rml:PredicateObjectMap;
     rml:predicate :hasName;
-    rml:objectMap [ rml:reference "name" ];
+    rml:objectMap [
+      a rml:ObjectMap;
+      rml:reference "name";
+    ];
   ];
   rml:predicateObjectMap [
+    a rml:PredicateObjectMap;
     rml:predicate :hasBirthyear;
     rml:objectMap [
+      a rml:ObjectMap;
       rml:reference "birthyear";
       rml:datatype xsd:gYear;
     ];
   ];
   rml:predicateObjectMap [
+    a rml:PredicateObjectMap;
     rml:predicate :hasItem;
-    rml:objectMap [ rml:reference "item_type" ];
+    rml:objectMap [
+      a rml:ObjectMap;
+      rml:reference "item_type";
+    ];
   ].
 
+  

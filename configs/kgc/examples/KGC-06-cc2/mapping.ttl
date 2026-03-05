@@ -5,20 +5,21 @@
 
 <#TM> a rml:TriplesMap;
   rml:logicalSource [
+    a rml:LogicalSource;
     rml:source [
-      a rml:RelativePathSource;
+      a rml:Source, rml:RelativePathSource;
       rml:root rml:MappingDirectory;
       rml:path "data.json";
     ];
     rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.*";
   ];
-  rml:subjectMap [
+  rml:subjectMap [ a rml:SubjectMap;
     rml:template "http://example.com/seq{id}";
     rml:gather ( [ rml:reference "values.*" ] );
     rml:gatherAs rdf:Seq;
   ];
-  rml:predicateObjectMap [
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
     rml:predicate prov:wasDerivedFrom;
     rml:object <http://example.com/data.json>;
   ].

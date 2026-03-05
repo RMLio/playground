@@ -12,10 +12,15 @@
     ];
     rml:referenceFormulation rml:CSV;
   ];
-  rml:subjectMap [ rml:template "http://example.com/person{ID}" ];
+  rml:subjectMap [
+    a rml:SubjectMap;
+    rml:template "http://example.com/person{ID}";
+  ];
   rml:predicateObjectMap [
+    a rml:PredicateObjectMap;
     rml:predicate ex:name;
     rml:objectMap [
+      a rml:ObjectMap;
       rml:reference "ID";
       rml:termType rml:BlankNode;
       rml:gather (
@@ -36,10 +41,15 @@
     ];
     rml:referenceFormulation rml:CSV;
   ];
-  rml:subjectMap [ rml:template "http://example.com/book{ID}" ];
+  rml:subjectMap [
+    a rml:SubjectMap;
+    rml:template "http://example.com/book{ID}";
+  ];
   rml:predicateObjectMap [
+    a rml:PredicateObjectMap;
     rml:predicate ex:writtenBy;
     rml:objectMap [
+      a rml:ObjectMap;
       rml:reference "ID";
       rml:termType rml:BlankNode;
       rml:gather ( [

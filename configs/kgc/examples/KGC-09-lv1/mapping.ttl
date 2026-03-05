@@ -36,14 +36,23 @@
 
 :triplesMapItem a rml:TriplesMap;
   rml:logicalSource :jsonView;
-  rml:subjectMap [ rml:template "http://example.org/person/{name}/item/{item.#}" ];
-  rml:predicateObjectMap [
-    rml:predicate :hasName;
-    rml:objectMap [ rml:reference "item.type" ];
+  rml:subjectMap [
+    a rml:SubjectMap;
+    rml:template "http://example.org/person/{name}/item/{item.#}";
   ];
   rml:predicateObjectMap [
+    a rml:PredicateObjectMap;
+    rml:predicate :hasName;
+    rml:objectMap [
+      a rml:ObjectMap;
+      rml:reference "item.type";
+    ];
+  ];
+  rml:predicateObjectMap [
+    a rml:PredicateObjectMap;
     rml:predicate :hasWeight;
     rml:objectMap [
+      a rml:ObjectMap;
       rml:reference "item.weight";
       rml:datatype xsd:integer;
     ];

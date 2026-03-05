@@ -2,17 +2,17 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
 @prefix grel: <http://users.ugent.be/~bjdmeest/function/grel.ttl#>.
 
-<#JSONSource> a rml:LogicalSource;
-  rml:source [
-    a rml:RelativePathSource;
-    rml:root rml:MappingDirectory;
-    rml:path "data.json";
-  ];
-  rml:referenceFormulation rml:JSONPath;
-  rml:iterator "$[*]".
-
 <#PersonMapping> a rml:TriplesMap;
-  rml:logicalSource <#JSONSource>;
+  rml:logicalSource [
+    a rml:LogicalSource;
+    rml:source [
+      a rml:Source, rml:RelativePathSource;
+      rml:root rml:MappingDirectory;
+      rml:path "data.json";
+    ];
+    rml:referenceFormulation rml:JSONPath;
+    rml:iterator "$[*]";
+  ];
   rml:subjectMap [
     a rml:SubjectMap;
     rml:template "http://example.com/person/{id}";

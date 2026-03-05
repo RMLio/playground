@@ -2,19 +2,24 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
 @prefix grel: <http://users.ugent.be/~bjdmeest/function/grel.ttl#>.
 
-<#JSONSource> rml:source [
-  a rml:RelativePathSource;
-  rml:root rml:MappingDirectory;
-  rml:path "data.json";
-];
+<#PersonMapping> rml:logicalSource [
+  a rml:LogicalSource;
   rml:referenceFormulation rml:JSONPath;
-  rml:iterator "$[*]".
-
-<#PersonMapping> rml:logicalSource <#JSONSource>;
-  rml:subjectMap [ rml:template "http://example.com/person/{id}" ];
+  rml:iterator "$[*]";
+  rml:source [
+    a rml:RelativePathSource;
+    rml:root rml:MappingDirectory;
+    rml:path "data.json";
+  ];
+];
+  rml:subjectMap [
+    a rml:SubjectMap;
+    rml:template "http://example.com/person/{id}";
+  ];
   rml:predicateObjectMap [
     rml:predicate foaf:name;
     rml:objectMap [
+      a rml:ObjectMap;
       rml:functionExecution [
         rml:function grel:toUpperCase;
         rml:input [

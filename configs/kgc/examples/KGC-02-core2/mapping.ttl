@@ -3,21 +3,54 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
 
 <#AuthorMapping> a rml:TriplesMap;
-  rml:logicalSource <#AuthorsSource>;
-  rml:subjectMap [ rml:template "http://example.com/author/{id}" ];
+  rml:logicalSource [
+    a rml:LogicalSource;
+    rml:source [
+      a rml:RelativePathSource;
+      rml:root rml:MappingDirectory;
+      rml:path "authors.json";
+    ];
+    rml:referenceFormulation rml:JSONPath;
+    rml:iterator "$[*]";
+  ];
+  rml:subjectMap [
+    a rml:SubjectMap;
+    rml:template "http://example.com/author/{id}";
+  ];
   rml:predicateObjectMap [
+    a rml:PredicateObjectMap;
     rml:predicate foaf:name;
-    rml:objectMap [ rml:reference "name" ];
+    rml:objectMap [
+      a rml:ObjectMap;
+      rml:reference "name";
+    ];
   ].
 
-<#BookMapping> rml:logicalSource <#BooksSource>;
-  rml:subjectMap [ rml:template "http://example.com/book/{id}" ];
+<#BookMapping> a rml:TriplesMap;
+  rml:logicalSource [
+    a rml:LogicalSource;
+    rml:source [
+      a rml:Source, rml:RelativePathSource;
+      rml:root rml:MappingDirectory;
+      rml:path "books.json";
+    ];
+    rml:referenceFormulation rml:JSONPath;
+    rml:iterator "$[*]";
+  ];
+  rml:subjectMap [
+    a rml:SubjectMap;
+    rml:template "http://example.com/book/{id}";
+  ];
   rml:predicateObjectMap [
     rml:predicate dbo:title;
-    rml:objectMap [ rml:reference "title" ];
+    rml:objectMap [
+      a rml:ObjectMap;
+      rml:reference "title";
+    ];
   ], [
     rml:predicate dbo:author;
     rml:objectMap [
+      a rml:RefObjectMap;
       rml:parentTriplesMap <#AuthorMapping>;
       rml:joinCondition [
         rml:child "author_id";
@@ -25,22 +58,4 @@
       ];
     ];
   ].
-
-<#AuthorsSource> a rml:LogicalSource;
-  rml:source [
-    a rml:RelativePathSource;
-    rml:root rml:MappingDirectory;
-    rml:path "authors.json";
-  ];
-  rml:referenceFormulation rml:JSONPath;
-  rml:iterator "$[*]".
-
-<#BooksSource> a rml:LogicalSource;
-  rml:source [
-    a rml:RelativePathSource;
-    rml:root rml:MappingDirectory;
-    rml:path "books.json";
-  ];
-  rml:referenceFormulation rml:JSONPath;
-  rml:iterator "$[*]".
 
