@@ -7,6 +7,15 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
 
+## [1.0.1 - 2026-03-06]
+
+### Changed
+
+- Adapted alert messages
+- Adapted configs
+- Restored persister
+- Updated SWLS dependency
+
 ## [1.0.0] - 2026-02-03
 
 ### Added
