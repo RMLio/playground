@@ -2,7 +2,6 @@
     "id": "KGC-06-cc2",
     "label": "(CC) Gather in subject map",
     "comment": "KGC-CC2",
-    "icon": "target",
     "mapping": "mapping.ttl",
     "data": [
         {

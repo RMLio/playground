@@ -2,7 +2,6 @@
     "id": "KGC-01-core1",
     "label": "(Core) Simple json source",
     "comment": "KGC-CORE1",
-    "icon": "target",
     "mapping": "mapping.ttl",
     "data": [
         {

@@ -2,7 +2,6 @@
     "id": "KGC-09-lv1",
     "label": "(LV) Deeply nested data source",
     "comment": "KGC-LV1",
-    "icon": "target",
     "mapping": "mapping.ttl",
     "data": [
         {

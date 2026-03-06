@@ -2,7 +2,6 @@
     "id": "KGC-03-io1",
     "label": "(IO) Combination of a JSON and a CSV source",
     "comment": "KGC-IO1",
-    "icon": "target",
     "mapping": "mapping.ttl",
     "data": [
         {
