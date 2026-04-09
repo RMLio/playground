@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
 
+### Added
+
+- Added Share URL button
+
 ## [1.0.1 - 2026-03-06]
 
 ### Changed
