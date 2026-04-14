@@ -24,7 +24,7 @@
         }
     ],
     "RMLengine": {
-        "url": "https://github.com/kg-construct/BURP/tree/kgc-2025-conformance",
+        "url": "https://github.com/kg-construct/BURP/commit/5b6845034557a3ac1923a96140f987c0b6ce285a",
         "label": "BURP kgc-2025-conformance branch",
         "webAPI": "https://rml.io/api/playground/rmlmapper/executeBurp"
     },
