@@ -37,10 +37,12 @@ npm install
 
 The RML Playground generates RDF data through a remote server.
 For this, the RML Playground requires you to provide
-an RML mapping engine endpoint.
+an mapping engine endpoint.
 You can either provide the URL of an existing server, or
 set one up yourself by following
 [these instructions](https://github.com/RMLio/rmlmapper-webapi-js).
+RML Playground can integrate mapping engines if they expose an HTTP interface that adheres to the OpenAPI specification available at [https://rml.io/api/playground/rmlmapper/](https://rml.io/api/playground/rmlmapper/).
+
 Make sure that you provide the correct URL for the endpoint during [configuration](#configuring-the-rml-playground).
 
 ### Configuring the RML Playground
