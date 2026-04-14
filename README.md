@@ -11,7 +11,7 @@ The generated RDF data can be exported for use outside of the RML Playground.
 * [Requirements](#requirements)
 * [Installation](#installation)
 * [Usage](#usage)
-  * [Setting up the RMLMapper Web API endpoint](#setting-up-the-rmlmapper-web-api-endpoint)
+  * [Setting up the mapping engine API endpoint](#setting-up-the-mapping-engine-api-endpoint)
   * [Configuring the RML Playground](#configuring-the-rml-playground)
 * [Additional configuration sets](#additional-configuration-sets)
 * [Developing](#developing)
@@ -33,7 +33,7 @@ npm install
 
 ## Usage
 
-### Setting up the RMLMapper Web API endpoint
+### Setting up the mapping engine API endpoint
 
 The RML Playground generates RDF data through a remote server.
 For this, the RML Playground requires you to provide
