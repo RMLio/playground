@@ -32,6 +32,7 @@
     "webAPI": "https://rml.io/api/rmlmapper/execute"
   },
   "logo": "logo_rmlio",
+  "localStorageKey": "rmlio",
   "surveyUrl": "https://docs.google.com/forms/d/e/1FAIpQLScGDS6W3BBMje5DpqT6HOwAkIrhFHg97_wjJbJoIp8yf0C4zQ/viewform?usp=header",
   "SWLSconfig": {
     "ontologies": [

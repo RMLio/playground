@@ -56,6 +56,9 @@ The configuration options are (all keys are optional unless noted):
 - `"title"`: (string) Title displayed in the browser tab and as page header.
 - `"logo"`: (string) "logo_kgc" or "logo_rmlio".
 - `"surveyUrl"`: (string) URL used for the feedback / survey link in the UI.
+- `"localStorageKey"`: (string) Stable key used to namespace persisted browser state
+  (latest example) in localStorage. Use this to avoid collisions across different
+  playground configurations sharing the same origin.
 - `"RMLspecifications"`: (array of objects, optional) Array of RML specification objects,
   each with `url` and `label` properties.
 - `"RMLengine"`: (object) Object containing RML mapping engine information:

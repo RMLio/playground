@@ -1,6 +1,7 @@
 {
     "title": "RML.kgc Playground",
     "logo": "logo_kgc",
+    "localStorageKey": "kgc",
     "RMLspecifications": [
         {
             "url": "https://w3id.org/rml/core/spec",
