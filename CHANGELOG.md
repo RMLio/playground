@@ -7,11 +7,14 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
 
+## [1.0.2] - 2026-04-17
+
 ### Added
 
 - Added Share URL button
+- Added local storage key
 
-## [1.0.1 - 2026-03-06]
+## [1.0.1] - 2026-03-06
 
 ### Changed
 
@@ -25,3 +28,6 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Added
 
 - First version
+
+[1.0.2]: https://github.com/RMLio/playground/compare/v1.0.1...v1.0.2
+[1.0.1]: https://github.com/RMLio/playground/compare/v1.0.0...v1.0.1
